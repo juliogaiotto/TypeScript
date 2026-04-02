@@ -1,0 +1,33 @@
+{
+    "name": "mypass",
+    "version": "1.0.0",
+    "description": "Gerador de Senhas",
+    "main": "dist/main.js",
+    "scripts": {
+        "build-ts": "tsc",
+        "start": "npm run build-ts && electron .",
+        "build": "npm run build-ts && electron-builder --win --x64"
+    },
+    "build": {
+        "appId": "dev.nukleo.mypass",
+        "productName": "MyPass",
+        "files": [
+            "dist/**/*",
+            "src/index.html",
+            "src/assets/**/*"
+        ],
+        "directories": {
+            "output": "release/"
+        },
+        "win": {
+            "target": "portable"
+        }
+    },
+    "author": "nukleo.dev",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "electron-builder": "^24.9.1",
+        "typescript": "^5.0.0"
+    }
+}
